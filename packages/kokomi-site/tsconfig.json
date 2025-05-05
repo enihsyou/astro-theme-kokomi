@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "astro/tsconfigs/strictest",
+    "compilerOptions": {
+        // Code runs in the DOM
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        // forces TypeScript to consider all files as modules
+        "moduleDetection": "force",
+        // Building for a library
+        "declaration": true
+    }
+}

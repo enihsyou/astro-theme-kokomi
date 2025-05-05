@@ -1,0 +1,20 @@
+{
+    "name": "astro-theme-kokomi",
+    "description": "An Astro theme template for building knowledge-sharing blogs.",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@enihsyou/prettier-config": "^0.0.1",
+        "@eslint/js": "^9.26.0",
+        "eslint": "^9.26.0",
+        "eslint-plugin-astro": "^1.3.1",
+        "prettier": "^3.5.3",
+        "prettier-plugin-astro": "^0.14.1",
+        "typescript-eslint": "^8.32.0"
+    }
+}
