@@ -6,7 +6,8 @@
         "packages/*"
     ],
     "scripts": {
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "docker:site": "docker build -t astro-theme-kokomi/site -f packages/site/Dockerfile ."
     },
     "devDependencies": {
         "@enihsyou/prettier-config": "^0.0.1",
