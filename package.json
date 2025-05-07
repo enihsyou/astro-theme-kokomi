@@ -2,11 +2,15 @@
     "name": "astro-theme-kokomi",
     "description": "An Astro theme template for building knowledge-sharing blogs.",
     "private": true,
+    "type": "module",
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
-        "format": "prettier --write .",
+        "format": "prettier --check .",
+        "format:fix": "prettier --write .",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
         "docker:site": "docker build -t astro-theme-kokomi/site -f packages/site/Dockerfile ."
     },
     "devDependencies": {
