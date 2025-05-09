@@ -3,15 +3,21 @@
     "description": "An Astro theme template for building knowledge-sharing blogs.",
     "private": true,
     "type": "module",
-    "workspaces": [
-        "packages/*"
-    ],
     "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "build:docker": "docker build -t astro-theme-kokomi .",
+        "preview": "astro preview",
+        "clean": "rm -rf .astro dist",
         "format": "prettier --check .",
         "format:fix": "prettier --write .",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
-        "docker:site": "docker build -t astro-theme-kokomi/site -f packages/site/Dockerfile ."
+        "link:astro-kokomi": "bun --cwd=packages/astro-kokomi link; bun link astro-kokomi",
+        "link:astro-kokomi:help": "# link packages/astro-kokomi for local development"
+    },
+    "dependencies": {
+        "astro": "^5.7.10"
     },
     "devDependencies": {
         "@enihsyou/prettier-config": "^0.0.1",

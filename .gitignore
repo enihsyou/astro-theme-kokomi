@@ -5,6 +5,8 @@
 .idea/
 # vscode setting folder
 .vscode/
+!.vscode/tasks.json
+!.vscode/extensions.json
 
 # build output
 dist/
