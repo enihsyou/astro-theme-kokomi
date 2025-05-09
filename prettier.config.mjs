@@ -1,4 +1,4 @@
-import enihsyou from "@enihsyou/prettier-config";
+import { withEditorConfig as enihsyou } from "@enihsyou/prettier-config";
 
 /**
  * @see https://prettier.io/docs/configuration

@@ -2,8 +2,6 @@ import type { AstroIntegration } from "astro";
 
 type SiteConfig = {
     site: string;
-    description?: string;
-    version: string;
 };
 
 export default function AstroKokomiIntegratin(opts: SiteConfig): AstroIntegration {
