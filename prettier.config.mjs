@@ -6,6 +6,8 @@ import { withEditorConfig as enihsyou } from "@enihsyou/prettier-config";
  */
 const config = {
     ...enihsyou,
+    plugins: ["prettier-plugin-astro"],
+    overrides: [{ files: "*.astro", options: { parser: "astro" } }],
 };
 
 export default config;
