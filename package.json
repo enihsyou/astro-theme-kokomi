@@ -13,6 +13,7 @@
     "format:fix": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "lint:knip": "knip",
     "link:astro-kokomi": "bun --cwd=packages/astro-kokomi link; bun link astro-kokomi",
     "link:astro-kokomi:help": "# link packages/astro-kokomi for local development"
   },
@@ -25,6 +26,8 @@
     "@unocss/preset-wind4": "^66.1.1",
     "eslint": "^9.26.0",
     "eslint-plugin-astro": "^1.3.1",
+    "globals": "^16.1.0",
+    "knip": "^5.56.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.32.0",

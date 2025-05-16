@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  // this extends also do the inclusion of .astro/ and exclusion of dist/
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     // Code runs in the DOM

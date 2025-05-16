@@ -10,6 +10,7 @@ This project is built using the following tools:
 - **Bun**: Manage JavaScript packages and run scripts.
 - **Prettier**: To format code consistently.
 - **ESLint**: To identify and fix problems in JavaScript code.
+- **Knip**: A tool to detect unused dependencies in project.
 
 ## Local Development
 
