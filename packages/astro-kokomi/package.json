@@ -15,6 +15,11 @@
     "email": "enihsyou@gmail.com"
   },
   "type": "module",
+  "exports": {
+    ".": "./src/integration/index.ts",
+    "./types": "./src/types/index.ts",
+    "./*": "./src/*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/enihsyou/astro-theme-kokomi.git",

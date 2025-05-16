@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    // Building for a library
-    "declaration": true
+    // NOTE: "paths" is not nessary here, because we can do self-referencing with
+    // package name (astro-kokomi/types) if "exports" is set in package.json
   }
 }

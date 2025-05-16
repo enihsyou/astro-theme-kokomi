@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   // this extends also do the inclusion of .astro/ and exclusion of dist/
-  "extends": "./tsconfig.base.json",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
+    // Code runs in the DOM
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // forces TypeScript to consider all files as modules
+    "moduleDetection": "force",
     // Consume library codes, ts(2742) will triggered with this set to true
     // see https://github.com/microsoft/TypeScript/issues/47663#issuecomment-1519138189
-    "declaration": false,
-    // import alias, e.g. @/layouts => ./src/layouts
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "declaration": false
   }
 }
