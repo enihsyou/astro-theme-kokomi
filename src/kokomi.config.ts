@@ -1,11 +1,18 @@
-import type { KokomiThemeConfig } from "astro-kokomi/types";
+import type { KokomiThemeInputs, KokomiThemeConfig } from "astro-kokomi/types/kokomi-config.ts";
+import { KokomiThemeSchema } from "astro-kokomi/types/kokomi-config.ts";
 
-const theme: KokomiThemeConfig = {
-    title: "My Site",
+/** User inputs */
+const theme: KokomiThemeInputs = {
     locale: {
         lang: "en-US",
     },
-    description: "This is my site description",
+    head: {},
 };
 
-export default theme;
+/** Coerce with defaults, actual used by scripts */
+const config: KokomiThemeConfig = KokomiThemeSchema.parse(theme);
+if (import.meta.env.DEV) {
+    // In dev mode, print parsed result to console
+    console.debug("Kokomi theme config:", config);
+}
+export default config;

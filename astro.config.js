@@ -11,4 +11,12 @@ export default defineConfig({
             site: "https://enihsyou.github.io/astro-theme-kokomi", // Add your site URL here
         }),
     ],
+    vite: {
+        build: {
+            sourcemap: true,
+        },
+    },
+    experimental: {
+        contentIntellisense: true,
+    },
 });

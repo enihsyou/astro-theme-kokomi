@@ -7,8 +7,9 @@
     // see https://github.com/microsoft/TypeScript/issues/47663#issuecomment-1519138189
     "declaration": false,
     // import alias, e.g. @/layouts => ./src/layouts
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"],
     }
   }
 }
