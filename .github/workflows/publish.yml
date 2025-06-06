@@ -22,8 +22,28 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+
+      # - name: Install, build, and upload your site
+      #   uses: withastro/action@v3
+      # note: during initial develop phase, packages/astro-kokomi need manual npm link process.
+      # withastro/action@v3 does not support insert pre build command yet. We do it manually.
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Link local packages
+        run: bun run link:astro-kokomi
+
+      - name: Install
+        run: bun install
+
+      - name: Build
+        run: bun run build
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist/"
 
   deploy:
     needs: build
