@@ -1,8 +1,14 @@
 import { z } from "astro/zod";
 import { zPath } from "../utils/zod";
 
-/** Settings for locale */
-export const ThemeLocaleSchema = z.object({
+/** Site information */
+export const ThemeSiteSchema = z.object({
+    /**
+     * The title and the name for this site,
+     * used in `<title>` tag and as a fallback for social cards
+     */
+    title: z.string().max(60).default("Kokomi"),
+
     /**
      * Language on HTML lang tag, following BCP47.
      * Notably, hyphen is used instead of underscore
@@ -10,10 +16,14 @@ export const ThemeLocaleSchema = z.object({
     lang: z.string().default("en-US"),
 });
 
+/** Global tweaks and toggles */
+export const ThemeGlobalSchema = z.object({});
+
+/** Color and palette settings */
+export const ThemeColorSchema = z.object({});
+
 /** Settings for HTML `<head>` section */
 export const ThemeHeadSchema = z.object({
-    /** The path inside `/public` to a favicon image for the site */
-    favicon: zPath().default("/favicon/favicon.ico"),
 
     /**
      * The path inside `/public` to a social card image for the site.
@@ -28,10 +38,19 @@ export const ThemeHeaderSchema = z.object({});
 /** Settings for Page Footer component */
 export const ThemeFooterSchema = z.object({});
 
+/** Settings for content collection */
+export const ThemeContentSchema = z.object({});
+
 /** Present user the ability to configure theme for the site */
 export const KokomiThemeSchema = z.object({
-    /** Designate locale settings for the site */
-    locale: ThemeLocaleSchema.default({}),
+    /** Site information */
+    site: ThemeSiteSchema.default({}),
+
+    /** Global tweaks and toggles */
+    global: ThemeGlobalSchema.default({}),
+
+    /** Color and palette settings */
+    color: ThemeColorSchema.default({}),
 
     /** Settings for HTML `<head>` section */
     head: ThemeHeadSchema.default({}),
@@ -41,8 +60,13 @@ export const KokomiThemeSchema = z.object({
 
     /** Settings for Page Footer component */
     footer: ThemeFooterSchema.default({}),
+
+    /** Settings for content collection */
+    content: ThemeContentSchema.default({}),
 });
 
-/** Main type used in kokomi.config.ts */
+/** User inputted type used in kokomi.config.ts */
 export type KokomiThemeInputs = z.input<typeof KokomiThemeSchema>;
+
+/** Fully loaded type returned by KokomiThemeSchema.parse() */
 export type KokomiThemeConfig = z.output<typeof KokomiThemeSchema>;

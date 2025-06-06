@@ -6,3 +6,8 @@ export interface PageMeta {
     /** The path to the image for the page */
     socialImage?: string;
 }
+
+export interface ArticleMeta extends PageMeta {
+    /** The publication date of the article */
+    articleDate: string;
+}

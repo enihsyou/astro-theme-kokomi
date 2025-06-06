@@ -3,7 +3,7 @@ import { KokomiThemeSchema } from "astro-kokomi/types/kokomi-config.ts";
 
 /** User inputs */
 const theme: KokomiThemeInputs = {
-    locale: {
+    site: {
         lang: "en-US",
     },
     head: {},
